@@ -134,3 +134,26 @@ form button:hover {
     font-size: 1.1rem;
     letter-spacing: 2px;
 }
+
+.text-danger {
+    color: red; 
+    font-weight: bold; 
+    margin-top: -10px; 
+    margin-bottom: 20px; 
+    font-family: Arial, sans-serif; 
+    font-size: 0.7rem; 
+}
+
+h2.text-center {
+    font-size: 4rem; 
+    text-align: center; 
+    color: #ffffff ; 
+    letter-spacing: 3px; 
+    margin-bottom: 30px; 
+    font-weight: bold;
+    text-shadow: 
+    2px 2px 0 white, 
+    -2px -2px 0 white, 
+    -2px 2px 0 white, 
+    2px -2px 0 white; 
+}
