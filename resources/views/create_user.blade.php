@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -6,7 +7,7 @@
     </div>
 
     <body style="background-image: url('{{ asset('assets/img/bg.jpg') }}');">
-        <form action="{{ route('user.store') }}" method="POST">
+        <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             
             <label for="nama">Nama:</label>
@@ -28,6 +29,11 @@
                 @endforeach
             </select>
             @foreach($errors->get('kelas_id') as $msg)
+                <p class="text-danger">{{ $msg }}</p>
+            @endforeach
+            <label class="margin-top">Foto:</label>
+            <input type="file" id="foto" name="foto">
+            @foreach($errors->get('foto') as $msg)
                 <p class="text-danger">{{ $msg }}</p>
             @endforeach
 

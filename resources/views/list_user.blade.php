@@ -5,7 +5,10 @@
 
 <div class="container">
     <h2 class="text-center">Daftar Pengguna</h2>
-    <table>
+    
+    <a href="{{ route('user.create') }}" class="btn btn-primary mb-3 custom-btn">Tambah Pengguna Baru</a>
+
+    <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -13,6 +16,7 @@
                 <th>NPM</th>
                 <th>Kelas</th>
                 <th>Aksi</th>
+                <th>Foto</th> 
             </tr>
         </thead>
         <tbody>
@@ -22,6 +26,13 @@
                 <td>{{ $user['nama'] }}</td>
                 <td>{{ $user['npm'] }}</td>
                 <td>{{ $user['nama_kelas'] }}</td>
+                <td>
+                    @if ($user['foto']) 
+                        <img src="{{ asset($user['foto']) }}" alt="Foto Profil" style="width: auto; height: 100px; object-fit: cover; border: 1px solid #ccc; border-radius: 5px;">
+                    @else
+                        <span>Tidak ada foto</span>
+                    @endif
+                </td>
                 <td class="action-buttons">
                     <button class="btn btn-edit">Edit</button>
                     <button class="btn btn-delete">Hapus</button>
